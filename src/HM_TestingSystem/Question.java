@@ -1,4 +1,4 @@
-package ru.logof;
+package HM_TestingSystem;
 
 public class Question {
     private String questionText;

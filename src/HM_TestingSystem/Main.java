@@ -1,4 +1,4 @@
-package ru.logof;
+package HM_TestingSystem;
 
 import java.io.*;
 import java.util.ArrayList;
