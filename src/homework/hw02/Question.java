@@ -1,4 +1,4 @@
-package HM_TestingSystem;
+package homework.hw02;
 
 public class Question {
     private String questionText;

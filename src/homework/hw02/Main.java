@@ -1,4 +1,4 @@
-package HM_TestingSystem;
+package homework.hw02;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -19,7 +19,6 @@ public class Main {
             Question question = new Question("Вопрос #"+ (i + 1), countAnswer);
 
             int indexGoodAnswer = (int)( Math.random() * countAnswer );
-            //System.out.println(indexGoodAnswer);
 
             for (int j = 0; j < countAnswer; j++){
                 question.addAnswer(( (j + 1) + ((j == indexGoodAnswer)? ". Верный ": ". Неверный ") + "ответ "), (j == indexGoodAnswer));
@@ -57,25 +56,22 @@ public class Main {
                         goodQuestion[goodAnswerCount] = i + 1;
                         goodAnswerCount +=1;
                     }
-                } catch (NumberFormatException ex) {
-                    System.out.println("Ответ не корректен. Попробуйте еще раз\n");
-                }catch (IOException ex) {
+                } catch (NumberFormatException | IOException ex) {
                     System.out.println("Ответ не корректен. Попробуйте еще раз\n");
                 }
-
             } while (answerNum < 1 || answerNum > 5);
         }
 
         System.out.println("Кол-во верных ответов: " + goodAnswerCount);
         if (goodAnswerCount != 0) {
-            String goodQuestionList = "";
+            StringBuilder stringBuilder = new StringBuilder();
             for (int j = 0; j < goodAnswerCount; j++) {
                 if (j != 0) {
-                    goodQuestionList += ", ";
+                    stringBuilder.append(", ");
                 }
-                goodQuestionList += goodQuestion[j];
+                stringBuilder.append(goodQuestion[j]);
             }
-            System.out.println("Список вопросов с верными ответами: " + goodQuestionList);
+            System.out.println("Список вопросов с верными ответами: " + stringBuilder.toString());
         }
     }
 

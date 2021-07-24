@@ -1,4 +1,4 @@
-import com.sun.jdi.PathSearchingVirtualMachine;
+package homework.hw01;
 
 import java.util.Base64;
 import java.util.Scanner;
