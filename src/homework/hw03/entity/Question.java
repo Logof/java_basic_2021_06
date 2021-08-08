@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Question {
-    private String questionText;
+    private final String questionText;
     private List<Answer> answers ;
 
     public Question(String questionText) {
         this.questionText = questionText;
-        this.answers = new ArrayList<Answer>();
+        this.answers = new ArrayList<>();
     }
 
     public void addAnswer(Answer answer) {
@@ -28,7 +28,7 @@ public class Question {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(questionText);
         for (Answer answer: answers) {
-            stringBuilder.append("\n"+answer.toString());
+            stringBuilder.append("\n").append(answer.toString());
         }
         return stringBuilder.toString();
     }

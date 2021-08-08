@@ -11,6 +11,8 @@ public class TestSystem {
     private int minAnswersCount;
     private int maxAnswersCount;
 
+    private final Random random = new Random();
+
     private List<Question> questions;
     private int[] goodQuestions;
 
@@ -28,7 +30,7 @@ public class TestSystem {
 
         for (int i = 0; i < countQuestion; i++) {
             Question question = new Question("Вопрос № " + (i + 1));
-            int countAnswer = (int) (Math.random() * (maxAnswersCount - minAnswersCount)) + minAnswersCount;
+            int countAnswer = random.nextInt(maxAnswersCount-minAnswersCount)+minAnswersCount;
             int indexGoodAnswer = (int)( Math.random() * countAnswer );
             for (int j = 0; j < countAnswer; j++){
                 question.addAnswer(new Answer(( (j + 1) + ((j == indexGoodAnswer)? ". Верный ": ". Неверный ") + "ответ "), (j == indexGoodAnswer)));
