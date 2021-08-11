@@ -1,8 +1,11 @@
 package homework.hw04;
 
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class SortArray {
     private static List<Integer> intArray = new ArrayList<>();
@@ -33,14 +36,19 @@ public class SortArray {
 
     private static void sortUserMethod() {
         Date begin = new Date(System.currentTimeMillis());
-
         slowSorning();
-
         Date end = new Date(System.currentTimeMillis());
-
         System.out.println("Сортировка реализованная пользователем:");
         printReportTime(begin, end);
+    }
 
+    public static String getDateDiff(Date begin, Date end) {
+        long diffInMillies = end.getTime() - begin.getTime();
+        long millis = diffInMillies % 1000;
+        long second = (diffInMillies / 1000) % 60;
+        long minute = (diffInMillies / (1000 * 60)) % 60;
+        long hour = (diffInMillies / (1000 * 60 * 60)) % 24;
+        return String.format("%02d:%02d:%02d.%d", hour, minute, second, millis);
     }
 
     private static void sortJavaMethod() {
@@ -55,10 +63,11 @@ public class SortArray {
     }
 
     private static void printReportTime(Date begin, Date end) {
-        SimpleDateFormat formatter= new SimpleDateFormat("HH:mm:ss.SSS");
-        System.out.println("Начало работы сортировки: "+ formatter.format(begin.getTime()));
-        System.out.println("Окончание работы сортировки: "+ formatter.format(end.getTime()));
-        System.out.println("Заняло: " + formatter.format(end.getTime() - begin.getTime()));
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");
+
+        System.out.println(String.format("Начало работы сортировки: %s", formatter.format(begin.getTime())));
+        System.out.println(String.format("Окончание работы сортировки: %s", formatter.format(end.getTime())));
+        System.out.println(String.format("Заняло: %s", getDateDiff(begin, end)));
     }
 
     public static void main(String[] args) {
