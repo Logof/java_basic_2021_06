@@ -62,3 +62,8 @@ select q.quest_text
      , public.answers   a
  where q.id  = a.quest_id
  order by q.id, a.id;
+
+
+-- Временная таблица, в которую записываются ответы на вопросы, для итогового подсчета (хотя подсчет можно делать на стороне клиента БД)
+--DROP TABLE user_answers
+CREATE TEMPORARY TABLE user_answers(id_quest BIGSERIAL, id_answer BIGSERIAL) ON COMMIT DELETE ROWS;
