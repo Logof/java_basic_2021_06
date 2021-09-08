@@ -5,6 +5,7 @@ import homework.hw07.game.GameWinnerConsolePrinter;
 import homework.hw07.game.Player;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 public class GameWinnerPrinterTest {
     private final GameWinnerConsolePrinter gameWinnerConsolePrinter = new GameWinnerConsolePrinter();
@@ -18,14 +19,12 @@ public class GameWinnerPrinterTest {
 
             if (actual.equals("Победитель: Вася")) {
                 System.out.printf("\"%s\" passed %n", scenario);
+            } else {
+                throw new RuntimeException("Не верный вывод имени победителя");
             }
-            throw new Throwable("Не верный вывод имени победителя");
-
-        } catch (Throwable e) {
+        } catch (RuntimeException | IOException e) {
             System.err.printf("\"%s\" fails with message \"%s\" %n", scenario, e.getMessage());
         }
-
-
     }
 
 }

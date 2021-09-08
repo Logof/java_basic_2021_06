@@ -14,10 +14,10 @@ public class DiceTest {
             if (actual > 0 && actual < 7) {
                 System.out.printf("\"%s\" passed %n", scenario);
             }
-            throw new Throwable("Выпало не допустимое значение = "+actual);
-
-
-        } catch (Throwable e) {
+            else {
+                throw new RuntimeException("Выпало не допустимое значение = " + actual);
+            }
+        } catch (RuntimeException e) {
             System.err.printf("\"%s\" fails with message \"%s\" %n", scenario, e.getMessage());
         }
     }

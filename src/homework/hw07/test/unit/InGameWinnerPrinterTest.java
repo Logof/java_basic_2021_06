@@ -12,7 +12,7 @@ public class InGameWinnerPrinterTest {
 
     public void testGameWinnerPrinter() {
         String scenario = "Тест игры. Вывод имени победителя";
-        String actual = "";
+
         try {
             Dice dice = new DiceImpl();
             GameWinnerPrinter gameWinnerPrinter = new GameWinnerPrinter() {
@@ -32,10 +32,10 @@ public class InGameWinnerPrinterTest {
             if (result.equals("Вася") || result.equals("Петя")) {
                 System.out.printf("\"%s\" passed %n", scenario);
             } else {
-                throw new Throwable("Не верно определен победитель");
+                throw new RuntimeException("Не верно определен победитель");
             }
 
-        } catch (Throwable e) {
+        } catch (RuntimeException e) {
             System.setOut(consoleStream);
             System.err.printf("\"%s\" fails with message \"%s\" %n", scenario, e.getMessage());
         }

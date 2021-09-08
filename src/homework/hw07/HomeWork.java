@@ -19,7 +19,7 @@ public class HomeWork {
 
         Информацию о пройденном тесте предлагается выводить в System.out, а об упавшем в System.err
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         DiceTest diceTest = new DiceTest();
         diceTest.testDice();
 
@@ -32,4 +32,5 @@ public class HomeWork {
         InGameWinnerPrinterTest inGameWinnerPrinterTest = new InGameWinnerPrinterTest();
         inGameWinnerPrinterTest.testGameWinnerPrinter();
     }
+
 }
