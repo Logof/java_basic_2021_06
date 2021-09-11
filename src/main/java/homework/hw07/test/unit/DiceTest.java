@@ -2,8 +2,10 @@ package homework.hw07.test.unit;
 
 import homework.hw07.game.DiceImpl;
 
-public class DiceTest {
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
+public class DiceTest {
     private final DiceImpl dice = new DiceImpl();
 
     public void testDice() {

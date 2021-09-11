@@ -30,7 +30,7 @@ public class InGameDiceTest {
             if (actual.equals("Ничья")) {
                 System.out.printf("\"%s\" passed %n", scenario);
             } else {
-                throw new RuntimeException("Не верно определен победитель. Ничья");
+                throw new RuntimeException("Не верно определен победитель. Ожидалось: 'Ничья'; Получено: '" + actual + "'");
             }
         } catch (RuntimeException e) {
             System.setOut(consoleStream);
