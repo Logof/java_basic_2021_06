@@ -1,0 +1,47 @@
+h2 {
+    color: steelblue;
+}
+
+label {
+    display: inline-block;
+    width: 300px;
+}
+
+.content-block {
+    width: 600px;
+    padding: 15px;
+    border: 1px double steelblue;
+}
+
+.input-data-field {
+    width: 275px;
+}
+
+td.name {
+    width: 300px;
+}
+
+td.sex {
+    width: 135px;
+}
+
+td.date {
+    width: 200px;
+}
+
+td.age {
+    width: 150px;
+}
+
+
+#statTab {
+    border: 1px solid steelblue;
+    border-collapse: collapse;
+    width: 775px;
+}
+
+#statTab tr td {
+    border: 1px solid steelblue;
+    padding: 1px;
+}
+
