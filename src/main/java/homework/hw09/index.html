@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Домашняя работа</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<h2>Форма добавления информации о студенте</h2>
+
+<div class="content-block">
+    <p>
+        <label>Имя студента:</label>
+        <input class="input-data-field" id="fio" />
+    </p>
+    <p>
+        <label>Дата рождения:</label>
+        <input class="input-data-field" type="date" id="date" />
+    </p>
+    <p>
+        <label>Пол:</label>
+        <select class="input-data-field" id="sex">
+            <option>Мужчина</option>
+            <option>Женщина</option>
+        </select>
+    </p>
+    <button onclick="addRow('statTab')">Добавить</button>
+</div>
+
+<h2>Таблица студентов</h2>
+<table id="statTab">
+    <thead>
+    <tr>
+        <td class="name">Имя студента</td>
+        <td class="sex">Пол</td>
+        <td class="date">Дата рождения</td>
+        <td class="age">Возраст</td>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3">Средний возраст студентов</td>
+            <td id="avgAge">Возраст</td>
+        </tr>
+    </tfoot>
+</table>
+</body>
+</html>
