@@ -5,7 +5,6 @@ import homework.hw_money2text.lib.currencies.USDDescription;
 import homework.hw_money2text.lib.currencies.ICurrenciesDescription;
 
 public class CurrenciesDescription {
-    private final CurrenciesDescription description = new CurrenciesDescription();
 
     private CurrenciesDescription(){
 
